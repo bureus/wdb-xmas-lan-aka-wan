@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 
 const GetTeamMates = (players, teamId) => {
   let toBeReturned = [];
-  let teammates = players.filter((item) => item.team == teamId);
+  let teammates = players.filter((item) => item.team === teamId);
   teammates.forEach((element) =>
     toBeReturned.push({
       username: element.username,

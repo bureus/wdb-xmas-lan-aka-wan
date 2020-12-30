@@ -4,7 +4,7 @@ import Teams from "./views/teams/index";
 import Hero from "./views/hero/index";
 import PlayerStatistics from "./views/playerstatistics/index";
 import "./App.css";
-import { Container, Divider, Grid } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 
 function App() {
   return (

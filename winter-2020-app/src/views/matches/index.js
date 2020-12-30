@@ -52,14 +52,14 @@ const StyledCard = withStyles((theme) => ({
 
 const GetTeamStats = (players, teamId, attr) => {
   let toBeReturned = 0;
-  let teammates = players.filter((item) => item.team == teamId);
+  let teammates = players.filter((item) => item.team === teamId);
   teammates.forEach((element) => (toBeReturned = toBeReturned + element[attr]));
   return toBeReturned;
 };
 
 const GetTeamName = (players, teamId) => {
-  let teammates = players.filter((item) => item.team == teamId);
-  let isPfl = teammates.find((element) => element.username == "PFL");
+  let teammates = players.filter((item) => item.team === teamId);
+  let isPfl = teammates.find((element) => element.username === "PFL");
   if (isPfl) return "Team PFL";
   return "Team Xantic";
 };
@@ -80,11 +80,11 @@ const Matches = () => {
             Matchens-lirare:{" "}
             <b>
               {
-                match.players.find((item) => item.id == match.mvp_user_id)
+                match.players.find((item) => item.id === match.mvp_user_id)
                   .username
               }
             </b>{" "}
-            ({match.players.find((item) => item.id == match.mvp_user_id).score})
+            ({match.players.find((item) => item.id === match.mvp_user_id).score})
           </Typography>
           <TableContainer>
             <Table className={classes.table} aria-label="simple table">

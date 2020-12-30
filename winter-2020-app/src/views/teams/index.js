@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 
 const GetTeamMates = (players, teamId) => {
   let toBeReturned = [];
-  let teammates = players.filter((item) => item.team == teamId);
+  let teammates = players.filter((item) => item.team === teamId);
   teammates.forEach((element) =>
     toBeReturned.push({
       username: element.username,
@@ -35,10 +35,10 @@ const GetTeamMates = (players, teamId) => {
 
 const GetTeamScore = (teamName, matches) => {
   let score = 0;
-  let capUserId = teamName == "Team PFL" ? 37128763 : 95747;
+  let capUserId = teamName === "Team PFL" ? 37128763 : 95747;
   matches.forEach(element => {
       let winningTeam = element.team1_score > element.team2_score ? 1 : 2;
-      if(element.players.find(player => player.id == capUserId).team == winningTeam)
+      if(element.players.find(player => player.id === capUserId).team === winningTeam)
         score = score+1;
   });
   return score;

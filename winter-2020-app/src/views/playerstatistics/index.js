@@ -46,11 +46,11 @@ const PlayerStatistics = () => {
       avrgScore: 0,
       bombPlants: 0,
       bombDefuses: 0,
-      team: player.team == 1 ? "Team PFL" : "Team Xantic",
+      team: player.team === 1 ? "Team PFL" : "Team Xantic",
     };
     matches.forEach((match) => {
       let matchStat = match.players.find(
-        (element) => element.username == player.username
+        (element) => element.username === player.username
       );
       row.kills = row.kills + matchStat.kills;
       row.deaths = row.deaths + matchStat.deaths;

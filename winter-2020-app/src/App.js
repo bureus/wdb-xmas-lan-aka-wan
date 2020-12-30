@@ -12,7 +12,7 @@ function App() {
       <Snowfall snowflakeCount={300} />
       <Hero />
       <Container className="bodyContainer">
-        <div className="xmasHeader">Wedemboys jultunering 2020</div>
+        <div className="xmasHeader">Wedemboys julturnering 2020</div>
         <Grid container spacing={2}>
           <Teams teamId={1} teamName="Team PFL" />
           <Teams teamId={2} teamName="Team Xantic" />

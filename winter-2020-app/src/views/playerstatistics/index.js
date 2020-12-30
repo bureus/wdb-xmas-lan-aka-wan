@@ -16,8 +16,9 @@ const columns = [
   { field: "player", headerName: "Player" },
   { field: "kills", headerName: "Kills" },
   { field: "deaths", headerName: "Deaths" },
+  { field: "kd", headerName: "K/D" },
   { field: "assists", headerName: "Assists" },
-  { field: "headshots", headerName: "Headshots" },
+  { field: "headshots", headerName: "HS %" },
   { field: "openingKills", headerName: "Opening frags" },
   { field: "openingDeaths", headerName: "Opening deaths" },
   { field: "clutches", headerName: "Clutches" },
@@ -64,6 +65,8 @@ const PlayerStatistics = () => {
       row.bombDefuses = row.bombDefuses + matchStat.bomb_defuses;
     });
     row.avrgScore = Math.trunc(row.avrgScore / 6);
+    row.kd = (row.kills / row.deaths).toFixed(2);
+    row.headshots = ((row.headshots / row.kills) * 100).toFixed(2);
     rows.push(row);
   });
 
